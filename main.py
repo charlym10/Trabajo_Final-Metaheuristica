@@ -75,8 +75,8 @@ def main():
     ## Ciclo generacional
     for i in range(max_generaciones):
         ### Seleccion
-        padre: Mochila = seleccion_torneo(poblacion, num_individuos_poblacion, data)
-        madre: Mochila = seleccion_torneo(poblacion, num_individuos_poblacion, data)
+        padre: Mochila = seleccion_torneo(poblacion, tamano_muestra_torneo, data)
+        madre: Mochila = seleccion_torneo(poblacion, tamano_muestra_torneo, data)
 
         ### Cruzamiento
         hijos: Dict[str, Mochila] = cruzamiento(padre, madre, data, cantidad_articulos)
