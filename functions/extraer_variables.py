@@ -1,5 +1,5 @@
 from models.Variables import Variables
-from typing import List
+from typing import Any, Dict, List
 
 
 def extraer_variables(datos: List[str]) -> Variables:
@@ -17,13 +17,13 @@ def extraer_variables(datos: List[str]) -> Variables:
         peso.append(int(fila[1]))
         valor.append(int(fila[2]))
 
-    resultado = {
+    data: Dict[str, Any] = {
         'etiquetas': etiquetas,
         'articulos': articulo,
         'pesos': peso,
         'valores': valor
     }
 
-    resultado = Variables(**resultado)
+    resultado = Variables(**data)
 
     return resultado

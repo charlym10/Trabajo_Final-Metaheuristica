@@ -6,7 +6,7 @@ from random import randint
 
 class Mochila(BaseModel):
     tamano: int
-    elementos: List[bool] = []
+    elementos: List[Any] = []
     pesos: List[int]
     valores: List[int]
     capacidad: int
@@ -16,20 +16,12 @@ class Mochila(BaseModel):
 
     def __init__(__pydantic_self__, **data: Any) -> None:
         super().__init__(**data)
-        if __pydantic_self__.elementos == []:
-            __pydantic_self__.elementos = [randint(0, 1) for i in range(__pydantic_self__.tamano)]
-        __pydantic_self__.f_objetivo = suma_lista([
-            __pydantic_self__.valores[i]*__pydantic_self__.elementos[i]
-                for i in range(__pydantic_self__.tamano)
-        ])
-        __pydantic_self__.ocupacion = suma_lista([
-            __pydantic_self__.pesos[i]*__pydantic_self__.elementos[i]
-                for i in range(__pydantic_self__.tamano)
-        ])
-        __pydantic_self__.es_factible = __pydantic_self__.ocupacion <= __pydantic_self__.capacidad
 
-    def __str__(self) -> str:
-        porcentaje_ocupacion: int = self.ocupacion/self.capacidad
+        __pydantic_self__.__actualizar_elementos()
+        
+
+    def __str__(__pydantic_self__) -> str:
+        porcentaje_ocupacion: int = __pydantic_self__.ocupacion/__pydantic_self__.capacidad
 
         barra: int = '['
         comparativo: int = 0
@@ -42,9 +34,39 @@ class Mochila(BaseModel):
         barra += ']'
 
         salida: str = (
-            f'Solución: {self.elementos}' + '\n' +
-            f'Función Objetivo: {self.f_objetivo}' + '\n' +
+            f'Solución: {__pydantic_self__.elementos}' + '\n' +
+            f'Función Objetivo: {__pydantic_self__.f_objetivo}' + '\n' +
             f'Ocupación: ' + barra + f'{porcentaje_ocupacion*100:.2f}%' + '\n' +
-            f'Es Fatible: {self.es_factible}'
+            f'Es Fatible: {__pydantic_self__.es_factible}'
         )
-        return salida # super().__str__()
+        return salida
+
+    def __setattr__(__pydantic_self__, name: str, value: Any) -> None:
+        super().__setattr__(name, value)
+        if name == 'elementos':
+            __pydantic_self__.__actualizar_f_objetivo()
+            __pydantic_self__.__actualizar_ocupacion()
+            __pydantic_self__.__actualizar_factibilidad()
+
+            
+
+    def __actualizar_elementos(__pydantic_self__):
+        if __pydantic_self__.elementos == []:
+            __pydantic_self__.elementos = [randint(0, 1) for i in range(__pydantic_self__.tamano)]
+
+    def __actualizar_f_objetivo(__pydantic_self__):
+        __pydantic_self__.f_objetivo = suma_lista([
+            __pydantic_self__.valores[i]*__pydantic_self__.elementos[i]
+                for i in range(len(__pydantic_self__.elementos))
+                    if type(__pydantic_self__.elementos[i]) == int
+        ])
+
+    def __actualizar_ocupacion(__pydantic_self__):
+        __pydantic_self__.ocupacion = suma_lista([
+            __pydantic_self__.pesos[i]*__pydantic_self__.elementos[i]
+                for i in range(len(__pydantic_self__.elementos))
+                    if type(__pydantic_self__.elementos[i]) == int
+        ])
+    
+    def __actualizar_factibilidad(__pydantic_self__):
+        __pydantic_self__.es_factible = __pydantic_self__.ocupacion <= __pydantic_self__.capacidad

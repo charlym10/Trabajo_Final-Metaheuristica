@@ -6,7 +6,7 @@ from random import choices
 def seleccion_torneo(poblacion: List[Mochila], tamano_muetra: int, data: Dict[str, Any]) -> Mochila:
     vector_aleatorios: List[Mochila] = choices(poblacion, k=tamano_muetra)
 
-    individuo = Mochila(**data)
+    individuo: Mochila = Mochila(**data)
     
     for i in vector_aleatorios:
         if i.es_factible:
