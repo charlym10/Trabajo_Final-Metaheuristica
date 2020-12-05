@@ -140,7 +140,7 @@ def main():
         f'Tamaño Muestra Torneo: {tamano_muestra_torneo}' + '\n' +
         f'Número Máximo Generaciones: {max_generaciones}' + '\n' +
         f'Tasa Mutación: {tasa_mutacion}' + '\n' +
-        f'Número Busquedas Locales: {num_busqueda_local}'
+        f'Número Búsquedas Locales: {num_busqueda_local}'
     )
 
     datos = DataFrame({

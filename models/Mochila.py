@@ -37,7 +37,7 @@ class Mochila(BaseModel):
             f'Solución: {__pydantic_self__.elementos}' + '\n' +
             f'Función Objetivo: {__pydantic_self__.f_objetivo}' + '\n' +
             f'Ocupación: ' + barra + f'{porcentaje_ocupacion*100:.2f}%' + '\n' +
-            f'Es Fatible: {__pydantic_self__.es_factible}'
+            f'Es Factible: {__pydantic_self__.es_factible}'
         )
         return salida
 
