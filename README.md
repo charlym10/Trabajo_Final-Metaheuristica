@@ -22,7 +22,7 @@ La filosofía del algoritmo se basa en exploración y explotación, aplicando un
 > Para la selección de los dos individuos se utilizó selección por torneo, que tiene como variables de entrada la población y el tamaño de la muestra, para el cruzamiento se utilizó la técnica de Cruzamiento PMX y para la mutación se implementó la estrategia de swing.
 
 ## Resultados:
-Después de correr el modelo en varias ocasiones combinando los parámetros de entrada antes mencionados, se pudo observar una estabilización del valor en (), algo importante a resaltar es que esto se consigue principalmente aumentando el tamaño de la población y estableciendo una tasa de mutación en 100%.
+Después de correr el modelo en varias ocasiones combinando los parámetros de entrada antes mencionados, se pudo observar que la función objetivo se estabiliza alrededor de 640 UNIDADES, algo importante a resaltar es que esto se consigue principalmente aumentando el tamaño de la población y estableciendo una tasa de mutación en 100%.
 A continuación, se muestran las salidas del programa:
 
 ```sh
@@ -76,9 +76,6 @@ Ocupación: [■■■■■■■■■■■■■■■■■■■ ]99.60%
 Es Fatible: True
 --- Fin ---
 ```
-
-## Resultados:
-Después de correr el modelo en varias ocasiones combinando los parámetros de entrada antes mencionados, se pudo observar que la función objetivo se estabiliza alrededor de 640 UNIDADES, algo importante a resaltar es que esto se consigue principalmente aumentando el tamaño de la población y estableciendo una tasa de mutación en 100%.
 
 ## Conclusiones:
 Particularmente resultó mas sencilla la implementación del algoritmo en Python que en Matlab, sin embargo, esto se debe principalmente al dominio que ya se tiene del lenguaje, en términos de rendimiento, se notó mayor velocidad en la búsqueda de la solución en Matlab, siendo un punto importante a la hora de implementar un caso real con una complejidad más elevada.
