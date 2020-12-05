@@ -33,7 +33,7 @@ Cantidad de individuos de la población: (100) 10
 Tamaño de la muestra para selección por torneo: (10) 4
 Número máximo de generaciones: (100)
 Tasa de mutación: (0.10)
-Número de busquedas locales: (25)
+Número de búsquedas locales: (25)
 --- Fin ---
 Solución Incumbente: 558
 Solución Incumbente: 605
@@ -68,12 +68,12 @@ Número Individuos Población: 10
 Tamaño Muestra Torneo: 4
 Número Máximo Generaciones: 100
 Tasa Mutación: 0.1
-Número Busquedas Locales: 25
+Número Búsquedas Locales: 25
 ~~~
 Solución: [0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1]
 Función Objetivo: 643
 Ocupación: [■■■■■■■■■■■■■■■■■■■ ]99.60%
-Es Fatible: True
+Es Factible: True
 --- Fin ---
 ```
 
