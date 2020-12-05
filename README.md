@@ -1,13 +1,16 @@
 # TRABAJO FINAL – METAHEURÍSTICAS: Problema de la Mochila
 
 ## Resumen
+
 Se escogió el problema de la mochila ya que no se encontró un algoritmo en el libro `OPTIMIZACIÓN COMBINATORIA - G. E. Mauricio y S. C. Jhon` que lo solucionara, además, es un problema bastante estudiado, de fácil implementación y que se ajusta bien al algoritmo genético (mismo que se trabajó en clase).
-Para la implementación se escogió el lenguaje de programación Python utilizando el paradigma de `Programación Orientada a Objetos (POO)` con el apoyo principalmente de la librería `pydantic==1.7.3` y en menor medida la librería `pandas==1.1.4`, a si mismo se utilizó un repositorio remoto para almacenar el código y gestionar los cambios, este se encuentra disponible en el siguiente enlace: https://github.com/charlym10/Trabajo_Final-Metaheuristica.
+Para la implementación se escogió el lenguaje de programación Python utilizando el paradigma de `Programación Orientada a Objetos (POO)` con el apoyo principalmente de la librería `pydantic==1.7.3` y en menor medida la librería `pandas==1.1.4`, a si mismo se utilizó un repositorio remoto para almacenar el código y gestionar los cambios, este se encuentra disponible en el siguiente enlace: <https://github.com/charlym10/Trabajo_Final-Metaheuristica>.
 
 ## Problema
+
 El problema consiste en decidir qué artículos empacar en una `Mochila` teniendo en cuenta el `Valor` que cada uno aparta y su `Peso` o costo de ser empacado, el algoritmo esta diseña para ser flexible respecto al tamaño del problema, sin embargo, se probó con un problema de 20 `Artículos`, los mismos se describen en el archivo `datos.txt`, como restricción, la mochila solo puede cargar un determinado `Peso`, sin embargo, el programa permite ingresar un valor a placer, por lo que para el caso en cuestión se digitó una restricción es de `250` unidades de `Peso`.
 
 ## Algoritmo
+
 La filosofía del algoritmo se basa en exploración y explotación, aplicando una técnica de selección, cruzamiento y mutación que parte de una población inicial y que en la literatura se le llama Algoritmo Genético, por lo anterior, las variables de entrada necesarias para correr el algoritmo son: 
 
 | Variable | Descripción |
@@ -22,6 +25,7 @@ La filosofía del algoritmo se basa en exploración y explotación, aplicando un
 > Para la selección de los dos individuos se utilizó selección por torneo, que tiene como variables de entrada la población y el tamaño de la muestra, para el cruzamiento se utilizó la técnica de Cruzamiento PMX y para la mutación se implementó la estrategia de swing.
 
 ## Resultados
+
 Después de correr el modelo en varias ocasiones combinando los parámetros de entrada antes mencionados, se pudo observar que la función objetivo se estabiliza alrededor de 640 UNIDADES, algo importante a resaltar es que esto se consigue principalmente aumentando el tamaño de la población y estableciendo una tasa de mutación en 100%.
 A continuación, se muestran las salidas del programa:
 
@@ -78,4 +82,5 @@ Es Factible: True
 ```
 
 ## Conclusiones
+
 Particularmente resultó mas sencilla la implementación del algoritmo en Python que en Matlab, sin embargo, esto se debe principalmente al dominio que ya se tiene del lenguaje, en términos de rendimiento, se notó mayor velocidad en la búsqueda de la solución en Matlab, siendo un punto importante a la hora de implementar un caso real con una complejidad más elevada.
