@@ -35,7 +35,7 @@ def cruzamiento(padre: Mochila, madre: Mochila, data: Dict[str, Any], cantidad_a
     ...     capacidad=data['capacidad']
     ... )
 
-    >>> seed(30) # aleatorio_1 = 2, aleatorio_1 = 4
+    >>> seed(30) # aleatorio_1 = 2, aleatorio_2 = 4
 
     >>> hijos = cruzamiento(padre=padre, madre=madre, data=data, cantidad_articulos=data['tamano'])
 
@@ -87,7 +87,3 @@ def cruzamiento(padre: Mochila, madre: Mochila, data: Dict[str, Any], cantidad_a
     }
 
     return hijos
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()

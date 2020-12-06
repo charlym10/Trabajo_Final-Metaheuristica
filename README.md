@@ -86,3 +86,38 @@ Es Factible: True
 ## Conclusiones
 
 Particularmente resultó más sencilla la implementación del algoritmo en Python que en Matlab, sin embargo, esto se debe principalmente al dominio que ya se tiene del lenguaje, en términos de rendimiento, se notó mayor velocidad en la búsqueda de la solución en Matlab, siendo esto un punto importante a la hora de implementar un caso real con una complejidad más elevada.
+
+## Pruebas
+
+Para las pruebas se utilzó el framework de puebas unitarias `unittest` acompañado de la herramienta para medir la cobertura de código `coverage==5.3`.
+
+Para ejecutar las pruebas, llame al modulo `test`:
+
+```sh
+$ python -m test
+test_actualizacion_variables_cruzamiento (test.test_functions.TestCruzamiento) ... ok
+test_resultado_cruzamiento (test.test_functions.TestCruzamiento) ... ok
+test_sawp (test.test_functions.TestSwap) ... ok
+test_mochila_con_elementos (test.test_models.TestMochila) ... ok
+test_mochila_elementos_ceros (test.test_models.TestMochila) ... ok
+test_mochila_sin_elementos (test.test_models.TestMochila) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.011s
+
+OK
+Name                       Stmts   Miss  Cover
+----------------------------------------------
+functions\__init__.py          0      0   100%
+functions\cruzamiento.py      26      0   100%
+functions\suma_lista.py        6      0   100%
+functions\swap.py             11      0   100%
+models\Mochila.py             44      0   100%
+models\__init__.py             0      0   100%
+test\__init__.py               0      0   100%
+test\test_functions.py        62      0   100%
+test\test_models.py           19      0   100%
+----------------------------------------------
+TOTAL                        168      0   100%
+Serving HTTP on 127.0.0.1 port 8000 (http://127.0.0.1:8000/) ...
+```

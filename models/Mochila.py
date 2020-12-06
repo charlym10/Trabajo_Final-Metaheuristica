@@ -53,6 +53,8 @@ class Mochila(BaseModel):
     def __actualizar_elementos(__pydantic_self__):
         if __pydantic_self__.elementos == []:
             __pydantic_self__.elementos = [randint(0, 1) for i in range(__pydantic_self__.tamano)]
+        else:
+            __pydantic_self__.elementos = __pydantic_self__.elementos
 
     def __actualizar_f_objetivo(__pydantic_self__):
         __pydantic_self__.f_objetivo = suma_lista([
