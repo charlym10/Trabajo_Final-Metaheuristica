@@ -89,7 +89,7 @@ Particularmente resultó más sencilla la implementación del algoritmo en Pytho
 
 ## Pruebas
 
-Para las pruebas se utilzó el framework de puebas unitarias `unittest` acompañado de la herramienta para medir la cobertura de código `coverage==5.3`.
+Para las pruebas se utilizó el framework de pruebas unitarias `unittest` acompañado de la herramienta para medir la cobertura de código `coverage==5.3`.
 
 Para ejecutar las pruebas, llame al modulo `test`:
 
